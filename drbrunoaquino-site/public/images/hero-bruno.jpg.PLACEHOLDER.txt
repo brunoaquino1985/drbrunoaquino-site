@@ -1,0 +1,10 @@
+SUBSTITUIR ESTE ARQUIVO POR UMA FOTO REAL DO DR. BRUNO
+
+Recomendado:
+- Formato: JPG ou PNG
+- Proporção: 3:4 (vertical) — ex.: 900x1200 ou 1200x1600
+- Fundo claro ou neutro (vai aparecer sobre gradiente areia/branco)
+- Sorriso natural, jaleco branco
+- Otimize antes de subir (use https://squoosh.app)
+- Salve como: hero-bruno.jpg
+- E delete este arquivo PLACEHOLDER.txt
