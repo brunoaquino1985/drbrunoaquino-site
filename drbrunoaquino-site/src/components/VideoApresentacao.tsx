@@ -21,9 +21,8 @@ export default function VideoApresentacao() {
             preload="metadata"
             playsInline
             className="w-full h-auto block"
-            poster="/images/hero-bruno.jpg"
           >
-            <source src="/video/apresentacao.mp4" type="video/mp4" />
+            <source src="/video/apresentacao.mp4#t=0.5" type="video/mp4" />
             Seu navegador não suporta o player de vídeo. Você pode baixar o
             vídeo{" "}
             <a href="/video/apresentacao.mp4" className="text-amber underline">
