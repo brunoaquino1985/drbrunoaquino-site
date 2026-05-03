@@ -15,7 +15,7 @@ export default function KitHighlight() {
 
           <div className="grid md:grid-cols-3 gap-8 items-center mt-4">
             <div className="md:col-span-2">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
+              <h2 className="!text-white text-3xl md:text-4xl font-display font-bold mb-3">
                 ⭐ {kit.title}
               </h2>
               <p className="text-white/85 mb-5 leading-relaxed">
@@ -37,7 +37,7 @@ export default function KitHighlight() {
                   De R$ {kit.oldPrice}
                 </div>
               )}
-              <div className="text-5xl font-display font-bold mb-1">
+              <div className="text-5xl font-display font-bold mb-1 !text-white">
                 R$ {kit.price}
               </div>
               <div className="text-xs text-white/70 mb-5">
