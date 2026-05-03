@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
+import VideoApresentacao from "@/components/VideoApresentacao";
 import KitHighlight from "@/components/KitHighlight";
 import EbookGrid from "@/components/EbookGrid";
 import Testimonials from "@/components/Testimonials";
@@ -11,6 +12,7 @@ export default function HomePage() {
     <>
       <Hero />
       <TrustBar />
+      <VideoApresentacao />
       <KitHighlight />
       <EbookGrid />
       <Testimonials />
