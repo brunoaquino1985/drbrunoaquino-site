@@ -2,9 +2,9 @@ import LeadCapture from "@/components/LeadCapture";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Capítulo 1 grátis · Manual de Quimioterapia",
+  title: "Capítulo grátis · Manual de Quimioterapia",
   description:
-    "Receba gratuitamente o capítulo 1 do Manual de Quimioterapia: checklist da 1ª sessão, sinais de alerta e dicas práticas escritas por oncologista clínico.",
+    "Receba gratuitamente um capítulo do Manual de Quimioterapia: como funciona o tratamento, cuidados pós-aplicação, graus de náuseas e checklist da consulta. Por oncologista clínico.",
 };
 
 export default function CapituloGratisPage() {
@@ -16,12 +16,12 @@ export default function CapituloGratisPage() {
             🎁 100% gratuito
           </span>
           <h1 className="text-4xl md:text-5xl font-display font-bold text-navy mb-4">
-            Capítulo 1 grátis · Manual de Quimioterapia
+            Capítulo grátis · Manual de Quimioterapia
           </h1>
           <p className="text-lg text-ink-light leading-relaxed">
             Se você ou alguém da sua família vai começar quimioterapia, esse
-            capítulo é pra você. 8 páginas com tudo que normalmente não cabe na
-            consulta inicial.
+            capítulo é pra você. 5 páginas em PDF, em linguagem clara, com o que
+            normalmente não cabe na consulta inicial.
           </p>
         </div>
       </section>
@@ -35,23 +35,24 @@ export default function CapituloGratisPage() {
             <ul className="space-y-3 text-ink leading-relaxed">
               <li className="flex gap-3">
                 <span className="text-teal mt-1">✓</span>
-                Checklist do que levar à 1ª sessão
+                Como funciona a quimioterapia (vias, ciclos e os 4 objetivos
+                do tratamento)
               </li>
               <li className="flex gap-3">
                 <span className="text-teal mt-1">✓</span>
-                Como se preparar fisicamente e emocionalmente
+                Cuidados após cada sessão e monitoramento de sintomas
               </li>
               <li className="flex gap-3">
                 <span className="text-teal mt-1">✓</span>
-                O que esperar do antes, durante e depois
+                Quando procurar ajuda médica imediata
               </li>
               <li className="flex gap-3">
                 <span className="text-teal mt-1">✓</span>
-                Sinais de alerta para procurar atendimento
+                Graus de náuseas e vômitos · medicamentos usados no controle
               </li>
               <li className="flex gap-3">
                 <span className="text-teal mt-1">✓</span>
-                Mitos e verdades sobre a quimioterapia
+                Checklist completo do que levar à próxima consulta
               </li>
             </ul>
             <div className="mt-8 p-4 bg-sand rounded-lg text-sm text-ink leading-relaxed">
