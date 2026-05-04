@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap");
+
+:root {
+  --color-navy: #0F2C4A;
+  --color-brand: #1D4E89;
+  --color-teal: #2A9D8F;
+  --color-sand: #F8F4EC;
+  --color-amber: #E9C46A;
+  --color-ink: #374151;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--color-ink);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", "Inter", sans-serif;
+  color: var(--color-navy);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.container-content {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-content { padding-left: 2rem; padding-right: 2rem; }
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--color-brand);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: #163d6c;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #fff;
+  color: var(--color-brand);
+  border: 2px solid var(--color-brand);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.78rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background: var(--color-sand);
+}
+
+.section-pad {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-pad { padding-top: 5rem; padding-bottom: 5rem; }
+}
