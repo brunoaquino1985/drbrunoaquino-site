@@ -61,15 +61,16 @@ export default function LeadCapture({
             isFullbleed ? "text-white" : "text-navy"
           }`}
         >
-          Receba o capítulo 1 do Manual de Quimioterapia
+          Receba grátis um capítulo do Manual de Quimioterapia
         </h2>
         <p
           className={`mb-8 leading-relaxed ${
             isFullbleed ? "text-white/85" : "text-ink-light"
           }`}
         >
-          8 páginas com checklist do que levar à 1ª sessão, o que esperar e os
-          sinais de alerta. Escrito por oncologista clínico, sem alarmismo.
+          5 páginas em PDF: como funciona a quimioterapia, cuidados após cada
+          sessão, graus de náuseas e vômitos e um checklist completo da
+          próxima consulta. Escrito por oncologista clínico, sem alarmismo.
         </p>
 
         {status === "ok" ? (
