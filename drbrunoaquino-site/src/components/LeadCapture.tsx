@@ -24,6 +24,26 @@ export default function LeadCapture({
         body: JSON.stringify({ name, email }),
       });
       if (!res.ok) throw new Error(await res.text());
+      // Eventos de conversão
+      if (typeof window !== "undefined") {
+        // Meta Pixel
+        const w = window as unknown as { fbq?: (...args: unknown[]) => void };
+        if (typeof w.fbq === "function") {
+          w.fbq("track", "Lead", {
+            content_name: "Capítulo Grátis - Manual de Quimioterapia",
+            content_category: "ebook",
+          });
+        }
+        // Google Analytics 4
+        const g = window as unknown as { gtag?: (...args: unknown[]) => void };
+        if (typeof g.gtag === "function") {
+          g.gtag("event", "generate_lead", {
+            currency: "BRL",
+            value: 0,
+            method: "lead_magnet_capitulo_gratis",
+          });
+        }
+      }
       setStatus("ok");
       setMessage(
         "Pronto! Em alguns minutos você recebe o capítulo no seu e-mail. Confere também a caixa de spam."
