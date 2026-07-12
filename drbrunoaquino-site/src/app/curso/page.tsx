@@ -58,12 +58,12 @@ export default function CursoPage() {
   return (
     <main className={`${sans.className} bg-[#071f27] text-white antialiased`}>
       {/* ===================== HERO ===================== */}
-      <section className="relative min-h-[92vh] w-full overflow-hidden">
+      <section className="relative min-h-[82vh] w-full overflow-hidden">
         <img
           src="/curso/hero.jpg"
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "100% center" }}
+          style={{ objectPosition: "100% 20%" }}
         />
         <div
           className="absolute inset-0"
@@ -268,6 +268,9 @@ export default function CursoPage() {
           </div>
         </div>
       </section>
+
+      {/* separador dourado */}
+      <div className="h-[3px] w-full bg-gradient-to-r from-transparent via-[#C9A24B] to-transparent" />
 
       {/* ===================== PROFESSOR ===================== */}
       <section className="relative min-h-[520px] overflow-hidden py-24">
