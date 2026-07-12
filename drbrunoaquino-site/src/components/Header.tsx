@@ -25,6 +25,9 @@ export default function Header() {
           <Link href="/ebooks" className="text-ink hover:text-brand transition-colors">
             Ebooks
           </Link>
+          <Link href="/curso" className="text-ink hover:text-brand transition-colors">
+            Curso
+          </Link>
           <Link href="/quem-sou" className="text-ink hover:text-brand transition-colors">
             Quem sou
           </Link>
