@@ -175,7 +175,7 @@ export default function CursoPage() {
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E7CE93]">Conteúdo do curso</p>
-              <h2 className={`${display.className} mt-3 text-3xl font-semibold sm:text-4xl`}>13 aulas, do básico às emergências</h2>
+              <h2 className={`${display.className} mt-3 text-3xl font-semibold text-white sm:text-4xl`}>13 aulas, do básico às emergências</h2>
             </div>
             <p className="max-w-sm text-sm text-white/60">
               Uma trilha completa e progressiva — cada aula com material de estudo, casos e questões.
@@ -213,7 +213,7 @@ export default function CursoPage() {
         <img src="/curso/band.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(6,25,32,0.94) 0%, rgba(6,25,32,0.75) 45%, rgba(6,25,32,0.25) 100%)" }} />
         <div className="relative mx-auto max-w-6xl px-6">
-          <h2 className={`${display.className} max-w-2xl text-3xl font-semibold leading-tight sm:text-4xl`}>
+          <h2 className={`${display.className} max-w-2xl text-3xl font-semibold leading-tight text-white sm:text-4xl`}>
             “Cuidar de quem enfrenta o câncer começa com conhecimento.”
           </h2>
           <p className="mt-5 max-w-xl text-lg text-white/80">
@@ -253,7 +253,7 @@ export default function CursoPage() {
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E7CE93]">Comece sem pagar nada</p>
-            <h2 className={`${display.className} mt-3 text-3xl font-semibold leading-tight sm:text-4xl`}>
+            <h2 className={`${display.className} mt-3 text-3xl font-semibold leading-tight text-white sm:text-4xl`}>
               Assista à aula gratuita
             </h2>
             <p className="mt-4 text-lg text-white/80">
@@ -278,7 +278,7 @@ export default function CursoPage() {
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E7CE93]">Quem ensina</p>
-            <h2 className={`${display.className} mt-3 text-3xl font-semibold sm:text-4xl`}>Dr. Bruno Aquino de Souza</h2>
+            <h2 className={`${display.className} mt-3 text-3xl font-semibold text-white sm:text-4xl`}>Dr. Bruno Aquino de Souza</h2>
             <p className="mt-2 text-sm uppercase tracking-wide text-white/50">Oncologista Clínico · CRM-MG 55560 · RQE 56208</p>
             <p className="mt-6 text-lg leading-relaxed text-white/80">
               Une a prática da oncologia clínica ao ensino, com uma missão: dar à enfermagem o preparo para cuidar do
@@ -311,7 +311,7 @@ export default function CursoPage() {
       <section className="relative overflow-hidden bg-[#071f27] py-28">
         <div className="absolute inset-0" style={{ background: "radial-gradient(80% 60% at 50% 0%, rgba(201,162,75,0.16), transparent 60%)" }} />
         <div className="relative mx-auto max-w-3xl px-6 text-center">
-          <h2 className={`${display.className} text-3xl font-semibold leading-tight sm:text-5xl`}>
+          <h2 className={`${display.className} text-3xl font-semibold leading-tight text-white sm:text-5xl`}>
             Dê o próximo passo na sua carreira
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-white/80">
