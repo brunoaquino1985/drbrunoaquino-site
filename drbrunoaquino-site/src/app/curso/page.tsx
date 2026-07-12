@@ -246,12 +246,11 @@ export default function CursoPage() {
       </section>
 
       {/* ===================== AULA GRATUITA ===================== */}
-      <section className="bg-[#071f27] py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-2">
-          <div className="overflow-hidden rounded-3xl border border-white/10">
-            <img src="/curso/gratis.jpg" alt="" className="aspect-[16/9] w-full object-cover" />
-          </div>
-          <div>
+      <section className="relative min-h-[520px] overflow-hidden py-24">
+        <img src="/curso/gratis.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(6,25,32,0.96) 0%, rgba(6,25,32,0.86) 38%, rgba(6,25,32,0.45) 66%, rgba(6,25,32,0.05) 100%)" }} />
+        <div className="relative mx-auto flex min-h-[472px] max-w-6xl items-center px-6">
+          <div className="max-w-lg">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E7CE93]">Comece sem pagar nada</p>
             <h2 className={`${display.className} mt-3 text-3xl font-semibold leading-tight text-white sm:text-4xl`}>
               Assista à aula gratuita
@@ -271,16 +270,15 @@ export default function CursoPage() {
       </section>
 
       {/* ===================== PROFESSOR ===================== */}
-      <section className="bg-[#0a2831] py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-[0.8fr_1.2fr]">
-          <div className="overflow-hidden rounded-3xl border border-white/10">
-            <img src="/curso/prof.jpg" alt="Dr. Bruno Aquino de Souza" className="aspect-[16/9] w-full object-cover" />
-          </div>
-          <div>
+      <section className="relative min-h-[520px] overflow-hidden py-24">
+        <img src="/curso/prof.jpg" alt="Dr. Bruno Aquino de Souza" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(6,25,32,0.96) 0%, rgba(6,25,32,0.86) 38%, rgba(6,25,32,0.45) 66%, rgba(6,25,32,0.05) 100%)" }} />
+        <div className="relative mx-auto flex min-h-[472px] max-w-6xl items-center px-6">
+          <div className="max-w-lg">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E7CE93]">Quem ensina</p>
             <h2 className={`${display.className} mt-3 text-3xl font-semibold text-white sm:text-4xl`}>Dr. Bruno Aquino de Souza</h2>
-            <p className="mt-2 text-sm uppercase tracking-wide text-white/50">Oncologista Clínico · CRM-MG 55560 · RQE 56208</p>
-            <p className="mt-6 text-lg leading-relaxed text-white/80">
+            <p className="mt-2 text-sm uppercase tracking-wide text-white/60">Oncologista Clínico · CRM-MG 55560 · RQE 56208</p>
+            <p className="mt-6 text-lg leading-relaxed text-white/85">
               Une a prática da oncologia clínica ao ensino, com uma missão: dar à enfermagem o preparo para cuidar do
               paciente oncológico com segurança. Um conteúdo construído com rigor científico e linguagem acessível —
               do reconhecimento dos riscos à conduta correta em cada situação.
