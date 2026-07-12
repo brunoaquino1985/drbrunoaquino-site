@@ -42,7 +42,7 @@ const incluso = [
   ["Apostilas ilustradas", "material de estudo para cada aula"],
   ["Casos clínicos integrados", "para treinar a decisão na prática"],
   ["Banco de questões", "65 questões com gabarito comentado"],
-  ["Conteúdo confiável", "baseado em NCCN, ASCO, ESMO, ONS e INCA"],
+  ["Conteúdo confiável", "baseado em NCCN, ASCO, ESMO, ONS, SBOC e INCA"],
   ["Certificado de conclusão", "comprove sua capacitação"],
 ];
 
@@ -217,7 +217,7 @@ export default function CursoPage() {
             “Cuidar de quem enfrenta o câncer começa com conhecimento.”
           </h2>
           <p className="mt-5 max-w-xl text-lg text-white/80">
-            Um método que combina foto clínica real, raciocínio passo a passo e as melhores evidências — para você
+            Um método que combina casos clínicos reais, raciocínio passo a passo e as melhores evidências — para você
             transformar teoria em cuidado seguro no plantão.
           </p>
         </div>
