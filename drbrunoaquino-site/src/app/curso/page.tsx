@@ -249,7 +249,7 @@ export default function CursoPage() {
       <section className="bg-[#071f27] py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-2">
           <div className="overflow-hidden rounded-3xl border border-white/10">
-            <img src="/curso/gratis.jpg" alt="" className="aspect-[4/3] w-full object-cover" />
+            <img src="/curso/gratis.jpg" alt="" className="aspect-[16/9] w-full object-cover" />
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E7CE93]">Comece sem pagar nada</p>
@@ -274,7 +274,7 @@ export default function CursoPage() {
       <section className="bg-[#0a2831] py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-[0.8fr_1.2fr]">
           <div className="overflow-hidden rounded-3xl border border-white/10">
-            <img src="/curso/prof.jpg" alt="Dr. Bruno Aquino de Souza" className="aspect-[3/4] w-full object-cover" />
+            <img src="/curso/prof.jpg" alt="Dr. Bruno Aquino de Souza" className="aspect-[16/9] w-full object-cover" />
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E7CE93]">Quem ensina</p>
