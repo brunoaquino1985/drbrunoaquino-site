@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/quem-sou`, lastModified: now, priority: 0.7 },
     { url: `${base}/capitulo-gratis`, lastModified: now, priority: 0.9 },
     { url: `${base}/ebooks/kit-completo`, lastModified: now, priority: 0.9 },
+    { url: `${base}/curso`, lastModified: now, priority: 0.9 },
+    { url: `${base}/curso/aula-gratis`, lastModified: now, priority: 0.8 },
   ];
   const ebookPages = ebooks.map((e) => ({
     url: `${base}/ebooks/${e.slug}`,

@@ -3,14 +3,20 @@
 // Estilo: clínico-realista + futurista/3D · paleta teal (#0C3A47) + dourado (#C9A24B)
 // Next.js (App Router) + Tailwind CSS. Imagens em /public/curso/.
 //
-// >>> HOTMART: por enquanto o botão só existe. Quando abrir as vendas, cole o link
-//     de checkout na constante HOTMART_URL abaixo. <<<
+// >>> Link da Hotmart, ID do vídeo da aula gratuita e estado das inscrições
+//     ficam todos em src/lib/curso.ts <<<
 
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
+import {
+  AULA_GRATIS_URL,
+  MATRICULA_HREF,
+  MATRICULA_LABEL,
+  CHECKOUT_ATIVO,
+  INSCRICOES_ABERTAS,
+} from "@/lib/curso";
 
-const HOTMART_URL = "#"; // TODO: colar aqui o link de checkout da Hotmart quando as aulas subirem
-const AULA_GRATIS_URL = "#"; // TODO: link da aula gratuita / captura de e-mail (opcional)
+const VENDAS_ABERTAS = CHECKOUT_ATIVO && INSCRICOES_ABERTAS;
 
 const display = Fraunces({ subsets: ["latin"], weight: ["400", "500", "600", "700"], style: ["normal", "italic"] });
 const sans = Manrope({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
@@ -51,7 +57,12 @@ const faq = [
   ["Preciso de experiência prévia em oncologia?", "Não. O curso começa pelas bases e evolui até as emergências, então serve tanto para quem está começando quanto para quem quer se aprofundar e atualizar."],
   ["Como recebo o conteúdo?", "O curso é 100% online, com acesso às aulas, apostilas, casos clínicos e banco de questões. Você estuda no seu ritmo."],
   ["O curso dá certificado?", "Sim, você recebe um certificado de conclusão ao finalizar o curso."],
-  ["Quando as inscrições abrem?", "Em breve. Deixe seu contato na aula gratuita para ser avisado(a) em primeira mão quando as vagas abrirem."],
+  [
+    "Quando as inscrições abrem?",
+    VENDAS_ABERTAS
+      ? "As inscrições já estão abertas. Você garante sua vaga pelo botão de matrícula e recebe o acesso assim que o pagamento for confirmado."
+      : "Em breve. Assista à aula gratuita e deixe seu contato para ser avisado(a) em primeira mão quando as vagas abrirem.",
+  ],
 ];
 
 export default function CursoPage() {
@@ -97,11 +108,11 @@ export default function CursoPage() {
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a
-              href={HOTMART_URL}
+              href={MATRICULA_HREF}
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A24B] px-8 py-4 text-sm font-bold uppercase tracking-wide text-[#0a2029] transition hover:brightness-110"
               style={{ boxShadow: "0 12px 40px -12px rgba(201,162,75,0.65)" }}
             >
-              Quero me matricular
+              {MATRICULA_LABEL}
               <span className="transition group-hover:translate-x-1">→</span>
             </a>
             <a
@@ -320,13 +331,17 @@ export default function CursoPage() {
             para Enfermagem.
           </p>
           <a
-            href={HOTMART_URL}
+            href={MATRICULA_HREF}
             className="mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A24B] px-10 py-5 text-base font-bold uppercase tracking-wide text-[#0a2029] transition hover:brightness-110"
             style={{ boxShadow: "0 14px 46px -12px rgba(201,162,75,0.65)" }}
           >
-            Quero me matricular →
+            {MATRICULA_LABEL} →
           </a>
-          <p className="mt-6 text-sm text-white/50">Inscrições em breve · deixe seu contato na aula gratuita</p>
+          <p className="mt-6 text-sm text-white/50">
+            {VENDAS_ABERTAS
+              ? "Inscrições abertas · acesso imediato após a confirmação do pagamento"
+              : "Inscrições em breve · assista à aula gratuita e deixe seu contato"}
+          </p>
         </div>
       </section>
 
