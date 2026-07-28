@@ -24,23 +24,38 @@ const TITULO_AULA = "O que ninguém te contou sobre administrar quimioterapia";
 
 export const metadata: Metadata = {
   title: "Aula gratuita | Capacitação em Oncologia para Enfermagem",
-  description:
-    "Assista grátis: 5 verdades sobre a administração de quimioterapia que mudam a forma como a enfermagem cuida do paciente oncológico. Com material de apoio para baixar.",
+    description:
+    "Assista grátis: 5 verdades sobre administrar quimioterapia que todo profissional de enfermagem precisa conhecer — e por que aprender só na prática é perigoso. Com guia rápido de segurança para baixar.",
   alternates: { canonical: "/curso/aula-gratis" },
   openGraph: {
     title: "Aula gratuita · Capacitação em Oncologia para Enfermagem",
     description:
-      "5 verdades sobre administrar quimioterapia com segurança. Aula gratuita com o oncologista Dr. Bruno Aquino.",
+      "5 verdades sobre administrar quimioterapia com segurança. Aula gratuita com o oncologista Dr. Bruno Aquino de Souza.",
     type: "video.other",
   },
 };
 
 const aprendizados = [
-  ["O erro mais comum na checagem pré-infusão", "e o passo simples que evita a maioria dos incidentes."],
-  ["Como reconhecer um extravasamento cedo", "antes de virar lesão — o que olhar e o que fazer nos primeiros minutos."],
-  ["O sinal de reação infusional que passa batido", "e por que parar a infusão não é a única conduta."],
-  ["Neutropenia febril não espera", "a janela de tempo que muda o desfecho do paciente."],
-  ["O que dizer ao paciente antes de cada ciclo", "a orientação que reduz idas desnecessárias ao pronto-socorro."],
+  [
+    "A margem de erro é mínima",
+    "O quimioterápico tem janela terapêutica estreita: a distância entre a dose que trata e a que causa dano é pequena. Dose, via e tempo de infusão não têm folga.",
+  ],
+  [
+    "Existe droga que pode queimar o tecido",
+    "As vesicantes. Se saem da veia e caem no tecido, a lesão pode chegar à necrose — e a conduta errada nos primeiros minutos piora tudo.",
+  ],
+  [
+    "O risco também é seu",
+    "Quimioterápico é agente perigoso. Há exposição ocupacional no preparo, na administração e até no manuseio das excretas do paciente.",
+  ],
+  [
+    "Às vezes, uma febre é uma emergência",
+    "Quando a quimioterapia derruba as defesas, um estado febril pode ser o único sinal de uma infecção grave. O que parece banal, não é.",
+  ],
+  [
+    "A enfermagem é a última barreira",
+    "Antes de o medicamento chegar ao paciente, é você quem confere, questiona e administra — a última chance de interceptar um erro.",
+  ],
 ];
 
 export default function AulaGratisPage() {
@@ -75,8 +90,8 @@ export default function AulaGratisPage() {
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/80">
-            5 verdades sobre a administração de quimioterapia que mudam a forma como você cuida — do reconhecimento do
-            risco à conduta correta à beira do leito.
+            5 verdades que todo profissional de enfermagem precisa conhecer — e por que aprender só “na prática” é
+            perigoso.
           </p>
 
           <div className="mt-10">
@@ -102,8 +117,12 @@ export default function AulaGratisPage() {
         <div className="mx-auto max-w-3xl px-6">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9a7a2e]">Nesta aula</p>
           <h2 className={`${display.className} mt-3 text-3xl font-semibold sm:text-4xl`}>
-            O que você vai levar em 30 minutos
+            As 5 verdades, em cerca de 15 minutos
           </h2>
+          <p className="mt-4 text-[17px] leading-relaxed text-[#0a2029]/70">
+            Administrar quimioterapia não é como dar qualquer outro remédio. O gesto até parece o mesmo — puncionar e
+            infundir. O que muda é o tamanho do risco: para o paciente e para você.
+          </p>
 
           <ul className="mt-10 space-y-6">
             {aprendizados.map(([t, d], i) => (
@@ -139,11 +158,11 @@ export default function AulaGratisPage() {
             Material gratuito
           </span>
           <h2 className={`${display.className} mt-5 text-3xl font-semibold leading-tight text-white sm:text-4xl`}>
-            Baixe o guia rápido de segurança
+            Antes de administrar quimioterapia
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-white/80">
-            O resumo da aula em PDF: checklist pré-infusão, sinais de alerta de extravasamento e reação infusional, e a
-            conduta imediata em cada um. Feito para caber no bolso do jaleco.
+            O guia rápido com o essencial da segurança, em PDF: 8 atitudes que protegem o paciente e você — da dupla
+            identificação ao registro do quase-erro. Para revisar antes de cada plantão.
           </p>
 
           <div className="mt-9 text-left">

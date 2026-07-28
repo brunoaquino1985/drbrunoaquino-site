@@ -45,7 +45,7 @@ export default function AulaGratisForm() {
 
       setStatus("ok");
       setMessage(
-        "Pronto! Em alguns minutos você recebe o material de apoio no seu e-mail. Confira também a caixa de spam."
+        "Pronto! Em alguns minutos você recebe o guia rápido no seu e-mail. Confira também a caixa de spam."
       );
       setName("");
       setEmail("");
@@ -90,7 +90,7 @@ export default function AulaGratisForm() {
         className="rounded-full bg-[#C9A24B] py-4 text-sm font-bold uppercase tracking-wide text-[#0a2029] transition hover:brightness-110 disabled:opacity-50 sm:col-span-2"
         style={{ boxShadow: "0 12px 40px -12px rgba(201,162,75,0.65)" }}
       >
-        {status === "loading" ? "Enviando..." : "Quero o material de apoio"}
+        {status === "loading" ? "Enviando..." : "Quero o guia rápido"}
       </button>
       {status === "error" && (
         <p className="text-sm text-red-300 sm:col-span-2">{message}</p>
