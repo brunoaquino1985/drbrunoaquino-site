@@ -13,8 +13,13 @@ import {
   AULA_GRATIS_YOUTUBE_ID,
   MATRICULA_HREF,
   MATRICULA_LABEL,
-  CHECKOUT_ATIVO,
-  INSCRICOES_ABERTAS,
+  MATRICULA_NOTA,
+  PRE_INSCRICAO,
+  VENDAS_ABERTAS,
+  DATA_INICIO,
+  DATA_INICIO_CURTA,
+  PRECO,
+  PARCELAS,
 } from "@/lib/curso";
 
 const display = Fraunces({ subsets: ["latin"], weight: ["400", "500", "600", "700"], style: ["normal", "italic"] });
@@ -25,7 +30,7 @@ const TITULO_AULA = "O que ninguém te contou sobre administrar quimioterapia";
 export const metadata: Metadata = {
   title: "Aula gratuita | Capacitação em Oncologia para Enfermagem",
     description:
-    "Assista grátis: 5 verdades sobre administrar quimioterapia que todo profissional de enfermagem precisa conhecer — e por que aprender só na prática é perigoso. Com guia rápido de segurança para baixar.",
+    "Assista grátis: 5 verdades sobre administrar quimioterapia que todo profissional de enfermagem precisa conhecer — e por que aprender só na prática é perigoso. Com e-book em PDF para baixar.",
   alternates: { canonical: "/curso/aula-gratis" },
   openGraph: {
     title: "Aula gratuita · Capacitação em Oncologia para Enfermagem",
@@ -61,6 +66,17 @@ const aprendizados = [
 export default function AulaGratisPage() {
   return (
     <div className={`${sans.className} bg-[#071f27] text-white antialiased`}>
+      {/* ===================== FAIXA DE PRÉ-INSCRIÇÃO ===================== */}
+      {VENDAS_ABERTAS && PRE_INSCRICAO && (
+        <a
+          href={MATRICULA_HREF}
+          className="block bg-[#C9A24B] px-6 py-3 text-center text-sm font-semibold text-[#0a2029] transition hover:brightness-105"
+        >
+          <span className="font-extrabold uppercase tracking-wide">Pré-inscrição aberta</span> · curso começa em{" "}
+          {DATA_INICIO_CURTA} · {PRECO} {PARCELAS} →
+        </a>
+      )}
+
       {/* ===================== TOPO + PLAYER ===================== */}
       <section className="relative overflow-hidden pb-20 pt-14">
         <div
@@ -155,14 +171,14 @@ export default function AulaGratisPage() {
 
         <div className="relative mx-auto max-w-2xl px-6 text-center">
           <span className="inline-block rounded-full bg-[#C9A24B] px-4 py-1 text-xs font-bold uppercase tracking-wide text-[#0a2029]">
-            Material gratuito
+            E-book gratuito
           </span>
           <h2 className={`${display.className} mt-5 text-3xl font-semibold leading-tight text-white sm:text-4xl`}>
-            Antes de administrar quimioterapia
+            Leve as 5 verdades no bolso
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-white/80">
-            O guia rápido com o essencial da segurança, em PDF: 8 atitudes que protegem o paciente e você — da dupla
-            identificação ao registro do quase-erro. Para revisar antes de cada plantão.
+            O e-book em PDF com as 5 verdades da aula, mais as 3 atitudes que já elevam a sua segurança no próximo
+            plantão. Deixe seu e-mail e baixe na hora.
           </p>
 
           <div className="mt-9 text-left">
@@ -191,19 +207,29 @@ export default function AulaGratisPage() {
             comentadas e certificado de conclusão.
           </p>
 
+          {VENDAS_ABERTAS && PRE_INSCRICAO && (
+            <div className="mx-auto mt-9 max-w-md rounded-2xl border border-[#C9A24B]/40 bg-white/[0.06] px-7 py-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E7CE93]">
+                Pré-inscrição · preço promocional
+              </p>
+              <p className={`${display.className} mt-3 text-4xl font-semibold text-white`}>{PRECO}</p>
+              <p className="mt-1 text-sm text-white/65">{PARCELAS}</p>
+              <p className="mt-4 text-sm leading-relaxed text-white/75">
+                As aulas começam em <span className="font-semibold text-white">{DATA_INICIO}</span>, com uma nova aula
+                a cada semana.
+              </p>
+            </div>
+          )}
+
           <a
             href={MATRICULA_HREF}
-            className="mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A24B] px-10 py-5 text-base font-bold uppercase tracking-wide text-[#0a2029] transition hover:brightness-110"
+            className="mt-9 inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A24B] px-10 py-5 text-base font-bold uppercase tracking-wide text-[#0a2029] transition hover:brightness-110"
             style={{ boxShadow: "0 14px 46px -12px rgba(201,162,75,0.65)" }}
           >
             {MATRICULA_LABEL} →
           </a>
 
-          {!(CHECKOUT_ATIVO && INSCRICOES_ABERTAS) && (
-            <p className="mt-6 text-sm text-white/50">
-              Inscrições em breve · deixe seu contato acima para ser avisado(a)
-            </p>
-          )}
+          <p className="mt-6 text-sm text-white/50">{MATRICULA_NOTA}</p>
         </div>
       </section>
 

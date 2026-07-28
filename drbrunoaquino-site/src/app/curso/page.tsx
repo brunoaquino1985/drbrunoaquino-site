@@ -12,11 +12,14 @@ import {
   AULA_GRATIS_URL,
   MATRICULA_HREF,
   MATRICULA_LABEL,
-  CHECKOUT_ATIVO,
-  INSCRICOES_ABERTAS,
+  MATRICULA_NOTA,
+  VENDAS_ABERTAS,
+  PRE_INSCRICAO,
+  DATA_INICIO,
+  DATA_INICIO_CURTA,
+  PRECO,
+  PARCELAS,
 } from "@/lib/curso";
-
-const VENDAS_ABERTAS = CHECKOUT_ATIVO && INSCRICOES_ABERTAS;
 
 const display = Fraunces({ subsets: ["latin"], weight: ["400", "500", "600", "700"], style: ["normal", "italic"] });
 const sans = Manrope({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
@@ -59,15 +62,32 @@ const faq = [
   ["O curso dá certificado?", "Sim, você recebe um certificado de conclusão ao finalizar o curso."],
   [
     "Quando as inscrições abrem?",
-    VENDAS_ABERTAS
-      ? "As inscrições já estão abertas. Você garante sua vaga pelo botão de matrícula e recebe o acesso assim que o pagamento for confirmado."
-      : "Em breve. Assista à aula gratuita e deixe seu contato para ser avisado(a) em primeira mão quando as vagas abrirem.",
+    VENDAS_ABERTAS && PRE_INSCRICAO
+      ? `A pré-inscrição já está aberta, com preço promocional de ${PRECO}. As aulas começam em ${DATA_INICIO}: garantindo agora, você assegura a vaga e o valor promocional.`
+      : VENDAS_ABERTAS
+        ? "As inscrições estão abertas. Você garante sua vaga pelo botão de matrícula e recebe o acesso assim que o pagamento for confirmado."
+        : "Em breve. Assista à aula gratuita e deixe seu contato para ser avisado(a) em primeira mão quando as vagas abrirem.",
+  ],
+  [
+    "Como as aulas são liberadas?",
+    `A primeira aula é liberada em ${DATA_INICIO_CURTA} e, a partir daí, uma nova aula por semana, sempre aos sábados, até a Aula 13 em 07/11/2026. Cada aula liberada continua disponível — nada expira ao longo do curso.`,
   ],
 ];
 
 export default function CursoPage() {
   return (
     <main className={`${sans.className} bg-[#071f27] text-white antialiased`}>
+      {/* ===================== FAIXA DE PRÉ-INSCRIÇÃO ===================== */}
+      {VENDAS_ABERTAS && PRE_INSCRICAO && (
+        <a
+          href={MATRICULA_HREF}
+          className="block bg-[#C9A24B] px-6 py-3 text-center text-sm font-semibold text-[#0a2029] transition hover:brightness-105"
+        >
+          <span className="font-extrabold uppercase tracking-wide">Pré-inscrição aberta</span> · curso começa em{" "}
+          {DATA_INICIO_CURTA} · {PRECO} {PARCELAS} →
+        </a>
+      )}
+
       {/* ===================== HERO ===================== */}
       <section className="relative min-h-[82vh] w-full overflow-hidden">
         <img
@@ -105,6 +125,22 @@ export default function CursoPage() {
             A formação que transforma o cuidado em oncologia — do reconhecimento à conduta segura à beira do leito.
             Das bases às emergências, com método, casos reais e evidência.
           </p>
+
+          {VENDAS_ABERTAS && PRE_INSCRICAO && (
+            <div className="mt-8 max-w-md rounded-2xl border border-[#C9A24B]/40 bg-[#061921]/70 px-6 py-5 backdrop-blur-sm">
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#E7CE93]">
+                Pré-inscrição · preço promocional
+              </p>
+              <div className="mt-2 flex items-baseline gap-3">
+                <span className={`${display.className} text-4xl font-semibold text-white`}>{PRECO}</span>
+                <span className="text-sm text-white/60">{PARCELAS}</span>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-white/75">
+                As aulas começam em <span className="font-semibold text-white">{DATA_INICIO}</span> — uma nova aula por
+                semana, sempre aos sábados.
+              </p>
+            </div>
+          )}
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a
@@ -337,11 +373,7 @@ export default function CursoPage() {
           >
             {MATRICULA_LABEL} →
           </a>
-          <p className="mt-6 text-sm text-white/50">
-            {VENDAS_ABERTAS
-              ? "Inscrições abertas · acesso imediato após a confirmação do pagamento"
-              : "Inscrições em breve · assista à aula gratuita e deixe seu contato"}
-          </p>
+          <p className="mt-6 text-sm text-white/50">{MATRICULA_NOTA}</p>
         </div>
       </section>
 

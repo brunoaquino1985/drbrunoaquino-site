@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { EBOOK_URL } from "@/lib/curso";
 
 /**
  * Captura de e-mail da aula gratuita do curso.
@@ -44,9 +45,7 @@ export default function AulaGratisForm() {
       }
 
       setStatus("ok");
-      setMessage(
-        "Pronto! Em alguns minutos você recebe o guia rápido no seu e-mail. Confira também a caixa de spam."
-      );
+      setMessage("");
       setName("");
       setEmail("");
     } catch {
@@ -61,7 +60,25 @@ export default function AulaGratisForm() {
     return (
       <div className="rounded-2xl border border-[#C9A24B]/40 bg-white/[0.06] p-8 text-center">
         <div className="text-3xl">✅</div>
-        <p className="mt-3 text-lg text-white">{message}</p>
+        <p className="mt-4 text-lg font-semibold text-white">
+          Pronto! Seu e-book está liberado.
+        </p>
+        <p className="mt-2 text-[15px] leading-relaxed text-white/70">
+          Baixe agora pelo botão abaixo — também mandamos uma cópia para o seu e-mail.
+        </p>
+
+        <a
+          href={EBOOK_URL}
+          download
+          className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A24B] px-8 py-4 text-sm font-bold uppercase tracking-wide text-[#0a2029] transition hover:brightness-110"
+          style={{ boxShadow: "0 12px 40px -12px rgba(201,162,75,0.65)" }}
+        >
+          ⬇ Baixar o e-book em PDF
+        </a>
+
+        <p className="mt-5 text-xs text-white/50">
+          Não chegou o e-mail? Confira a caixa de spam ou a aba Promoções.
+        </p>
       </div>
     );
   }
@@ -90,7 +107,7 @@ export default function AulaGratisForm() {
         className="rounded-full bg-[#C9A24B] py-4 text-sm font-bold uppercase tracking-wide text-[#0a2029] transition hover:brightness-110 disabled:opacity-50 sm:col-span-2"
         style={{ boxShadow: "0 12px 40px -12px rgba(201,162,75,0.65)" }}
       >
-        {status === "loading" ? "Enviando..." : "Quero o guia rápido"}
+        {status === "loading" ? "Enviando..." : "Quero o e-book grátis"}
       </button>
       {status === "error" && (
         <p className="text-sm text-red-300 sm:col-span-2">{message}</p>

@@ -6,25 +6,23 @@
  * ============================================================
  */
 
-/**
- * Link de checkout da Hotmart.
- * Enquanto estiver "#", os botões de matrícula viram "aviso-me" e apontam
- * para a página da aula gratuita, em vez de levar a lugar nenhum.
- */
-export const HOTMART_URL: string = "#";
+/** Link de checkout da Hotmart. */
+export const HOTMART_URL: string = "https://go.hotmart.com/Q106913820E?dp=1";
 
 /**
  * ID do vídeo da aula gratuita no YouTube.
- * É só o trecho depois de "v=" — em https://www.youtube.com/watch?v=AbC123xyz
- * o ID é "AbC123xyz". Deixe "" enquanto o vídeo não estiver publicado.
+ * É só o trecho depois de "v=" ou o final da URL curta youtu.be/___
  *
  * Para a visualização contar no YouTube, o vídeo precisa estar PÚBLICO
  * (ou não listado) e com "Permitir incorporação" ligado.
  */
-export const AULA_GRATIS_YOUTUBE_ID: string = "";
+export const AULA_GRATIS_YOUTUBE_ID: string = "WR-MhsFCLlg";
 
 /** Página da aula gratuita dentro do próprio site. */
 export const AULA_GRATIS_URL = "/curso/aula-gratis";
+
+/** E-book entregue depois que a pessoa deixa o e-mail. */
+export const EBOOK_URL = "/curso/5-verdades-quimioterapia.pdf";
 
 /**
  * true  → inscrições abertas, botões levam ao checkout.
@@ -32,14 +30,39 @@ export const AULA_GRATIS_URL = "/curso/aula-gratis";
  */
 export const INSCRICOES_ABERTAS: boolean = true;
 
+/**
+ * Fase de pré-inscrição: as vendas já estão abertas, mas as aulas só
+ * começam na data abaixo. Quando o curso começar, mude para false.
+ */
+export const PRE_INSCRICAO: boolean = true;
+
+/** Data em que a primeira aula é liberada. */
+export const DATA_INICIO = "15 de agosto de 2026";
+export const DATA_INICIO_CURTA = "15/08/2026";
+
+/** Preço promocional da pré-inscrição. */
+export const PRECO = "R$ 129,90";
+export const PARCELAS = "em até 12x";
+
 /** Checkout realmente configurado? */
 export const CHECKOUT_ATIVO = HOTMART_URL !== "#" && HOTMART_URL.length > 1;
 
 /** Para onde o botão de matrícula deve apontar agora. */
 export const MATRICULA_HREF = CHECKOUT_ATIVO ? HOTMART_URL : AULA_GRATIS_URL;
 
-/** Texto do botão de matrícula conforme o estado das inscrições. */
-export const MATRICULA_LABEL =
-  CHECKOUT_ATIVO && INSCRICOES_ABERTAS
-    ? "Quero me matricular"
-    : "Quero ser avisado(a)";
+/** Vendas efetivamente no ar. */
+export const VENDAS_ABERTAS = CHECKOUT_ATIVO && INSCRICOES_ABERTAS;
+
+/** Texto do botão de matrícula conforme a fase. */
+export const MATRICULA_LABEL = !VENDAS_ABERTAS
+  ? "Quero ser avisado(a)"
+  : PRE_INSCRICAO
+    ? "Garantir minha pré-inscrição"
+    : "Quero me matricular";
+
+/** Linha de apoio que aparece embaixo dos botões de matrícula. */
+export const MATRICULA_NOTA = !VENDAS_ABERTAS
+  ? "Inscrições em breve · assista à aula gratuita e deixe seu contato"
+  : PRE_INSCRICAO
+    ? `Pré-inscrição aberta · ${PRECO} ${PARCELAS} · as aulas começam em ${DATA_INICIO_CURTA}`
+    : `Inscrições abertas · ${PRECO} ${PARCELAS} · acesso imediato`;
