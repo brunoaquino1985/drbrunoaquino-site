@@ -38,6 +38,22 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
+
+          <div className="mt-6 font-display text-lg font-semibold">
+            Para a enfermagem
+          </div>
+          <ul className="space-y-1.5 text-sm text-white/70">
+            <li>
+              <Link href="/curso" className="hover:text-amber transition-colors">
+                Capacitação em Oncologia
+              </Link>
+            </li>
+            <li>
+              <Link href="/curso/aula-gratis" className="hover:text-amber transition-colors">
+                Aula gratuita
+              </Link>
+            </li>
+          </ul>
         </div>
 
         <div>
