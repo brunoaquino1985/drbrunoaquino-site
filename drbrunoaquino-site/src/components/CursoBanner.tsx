@@ -4,147 +4,95 @@ import {
   PRE_INSCRICAO,
   DATA_INICIO_CURTA,
   PRECO,
-  PARCELAS,
 } from "@/lib/curso";
 
 /**
- * Faixa do curso na home, depois dos ebooks.
+ * Seção do curso na home, depois dos ebooks.
  *
- * O hero já apresenta o curso em uma linha; aqui o assunto é o conteúdo —
- * o que a pessoa realmente leva. Por isso o texto não repete o do topo:
- * mostra o nome do produto, o que vem dentro e as aulas críticas.
- *
- * A identidade é a do curso (teal + dourado) porque o público é outro:
- * o bloco abre dizendo para quem é, para o paciente não se perder na leitura.
+ * Mesma estrutura e mesma paleta do hero — o site inteiro fala a mesma
+ * língua visual. O que muda é o assunto: aqui o título é o nome do curso
+ * e a linha de números mostra o que vem dentro, sem repetir a frase que
+ * já aparece lá em cima.
  */
-
-const ENTREGAS = [
-  { n: "13", t: "aulas em vídeo" },
-  { n: "20h", t: "com certificado" },
-  { n: "65", t: "questões comentadas" },
-  { n: "13", t: "apostilas ilustradas" },
-];
-
-const CRITICAS = [
-  "Administração segura de quimioterapia",
-  "Extravasamento e manejo por classe de droga",
-  "Neutropenia febril: o fluxo de urgência",
-  "Reações infusionais, da leve à anafilaxia",
-];
-
 export default function CursoBanner() {
   return (
-    <section className="bg-[#071f27] py-16 text-white sm:py-20">
-      <div className="container-content">
-        <div className="relative overflow-hidden rounded-2xl">
-          <img
-            src="/curso/band.jpg"
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover"
-            style={{ objectPosition: "70% 40%" }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(100deg, rgba(6,25,32,0.97) 0%, rgba(6,25,32,0.94) 48%, rgba(6,25,32,0.78) 68%, rgba(6,25,32,0.42) 100%)",
-            }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(80% 70% at 0% 100%, rgba(201,162,75,0.20), transparent 62%)",
-            }}
-          />
+    <section className="bg-gradient-to-br from-white via-sand to-brand-50 section-pad">
+      <div className="container-content grid items-center gap-10 md:grid-cols-2 lg:gap-14">
+        <div>
+          <span className="mb-3 inline-block rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-800">
+            ✓ Baseado em NCCN, ASCO, ESMO e INCA
+          </span>
 
-          <div className="relative px-6 py-10 sm:px-10 sm:py-14">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-8 bg-[#C9A24B]" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#E7CE93]">
-                Para profissionais de enfermagem
-              </span>
-            </div>
+          <h2 className="mb-3 font-display text-3xl font-bold leading-[1.18] text-navy md:text-[38px]">
+            Capacitação em Oncologia para Enfermagem
+          </h2>
 
-            {/* o globals.css força cor navy em todo h*, por isso o text-white explícito */}
-            <h2 className="mt-4 max-w-xl font-display text-3xl font-semibold leading-tight !text-white sm:text-4xl">
-              Capacitação em Oncologia para Enfermagem
-            </h2>
+          <p className="mb-5 text-base leading-relaxed text-ink-light md:text-[17px]">
+            Da fisiopatologia do câncer às emergências oncológicas, na sequência
+            em que o cuidado acontece — com casos clínicos reais e o passo a
+            passo de cada conduta.
+          </p>
 
-            <p className="mt-4 max-w-lg text-base leading-relaxed text-white/80 sm:text-lg">
-              Da fisiopatologia do câncer às emergências oncológicas, na sequência
-              em que o cuidado acontece — com casos clínicos reais e o passo a passo
-              de cada conduta.
-            </p>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link href="/curso" className="btn-primary">
+              Conhecer o curso
+            </Link>
+            <Link href="/curso/aula-gratis" className="btn-secondary">
+              Assistir à aula gratuita
+            </Link>
+          </div>
 
-            {/* o que vem dentro */}
-            <div className="mt-8 grid max-w-2xl grid-cols-2 gap-x-6 gap-y-5 border-t border-white/12 pt-6 sm:grid-cols-4">
-              {ENTREGAS.map((e) => (
-                <div key={e.t}>
-                  <div className="font-display text-2xl font-semibold text-[#E7CE93]">
-                    {e.n}
-                  </div>
-                  <div className="mt-0.5 text-[13px] leading-snug text-white/60">
-                    {e.t}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* aulas críticas */}
-            <div className="mt-8 max-w-2xl">
-              <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/45">
-                Entre as aulas
+          <div className="mt-7 flex flex-wrap gap-x-8 gap-y-4 border-t border-sand-dark pt-5">
+            <div>
+              <div className="font-display text-[17px] font-bold text-navy">
+                13 aulas
               </div>
-              <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-                {CRITICAS.map((c) => (
-                  <li
-                    key={c}
-                    className="flex items-start gap-2 text-[14px] leading-snug text-white/80"
-                  >
-                    <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#C9A24B]" />
-                    {c}
-                  </li>
-                ))}
-              </ul>
+              <div className="text-[13px] text-ink-light">em vídeo</div>
             </div>
-
+            <div>
+              <div className="font-display text-[17px] font-bold text-navy">
+                20 horas
+              </div>
+              <div className="text-[13px] text-ink-light">com certificado</div>
+            </div>
             {VENDAS_ABERTAS && PRE_INSCRICAO && (
-              <div className="mt-8 inline-block rounded-xl border border-[#C9A24B]/40 bg-black/30 px-5 py-4">
-                <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#E7CE93]">
-                  Pré-inscrição
+              <>
+                <div>
+                  <div className="font-display text-[17px] font-bold text-navy">
+                    {DATA_INICIO_CURTA.slice(0, 5)}
+                  </div>
+                  <div className="text-[13px] text-ink-light">
+                    início das aulas
+                  </div>
                 </div>
-                <div className="mt-1 flex items-baseline gap-2">
-                  <span className="font-display text-3xl font-semibold text-white">
+                <div>
+                  <div className="font-display text-[17px] font-bold text-navy">
                     {PRECO}
-                  </span>
-                  <span className="text-sm text-white/65">{PARCELAS}</span>
+                  </div>
+                  <div className="text-[13px] text-ink-light">pré-inscrição</div>
                 </div>
-              </div>
-            )}
-
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link
-                href="/curso"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A24B] px-7 py-4 text-sm font-bold uppercase tracking-wide text-[#0a2029] transition hover:brightness-110"
-                style={{ boxShadow: "0 12px 40px -12px rgba(201,162,75,0.6)" }}
-              >
-                Conhecer o curso →
-              </Link>
-              <Link
-                href="/curso/aula-gratis"
-                className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-4 text-sm font-semibold text-white/90 transition hover:border-[#C9A24B] hover:text-white"
-              >
-                Assistir à aula gratuita
-              </Link>
-            </div>
-
-            {VENDAS_ABERTAS && PRE_INSCRICAO && (
-              <p className="mt-5 text-sm text-white/55">
-                As aulas começam em {DATA_INICIO_CURTA}, uma por semana.
-              </p>
+              </>
             )}
           </div>
+        </div>
+
+        <div className="relative">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-brand shadow-xl md:aspect-[9/10]">
+            <img
+              src="/curso/hero.jpg"
+              alt="Enfermeira em cuidado oncológico"
+              className="h-full w-full object-cover"
+              style={{ objectPosition: "72% 30%" }}
+            />
+          </div>
+          {VENDAS_ABERTAS && PRE_INSCRICAO && (
+            <div className="absolute -bottom-4 -right-4 hidden rounded-xl border border-sand-dark bg-white p-3 shadow-lg md:block">
+              <div className="text-xs text-ink-light">Turma inaugural</div>
+              <div className="text-sm font-semibold text-navy">
+                pré-inscrição aberta
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
