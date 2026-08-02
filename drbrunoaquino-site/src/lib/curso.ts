@@ -6,8 +6,15 @@
  * ============================================================
  */
 
-/** Link de checkout da Hotmart. */
-export const HOTMART_URL: string = "https://go.hotmart.com/Q106913820E?dp=1";
+/**
+ * Link DIRETO do checkout da Hotmart.
+ *
+ * O link antigo (go.hotmart.com/Q106913820E?dp=1) redirecionava para a vitrine do
+ * marketplace, e não para o pagamento: quem clicava em "garantir minha pré-inscrição"
+ * caía numa página de loja, com menu, categorias e botão de login, e ainda precisava
+ * procurar onde comprar. Um passo a mais bem no ponto mais caro do funil.
+ */
+export const HOTMART_URL: string = "https://pay.hotmart.com/Q106913820E";
 
 /**
  * ID do vídeo da aula gratuita no YouTube.
