@@ -14,7 +14,7 @@
  * caía numa página de loja, com menu, categorias e botão de login, e ainda precisava
  * procurar onde comprar. Um passo a mais bem no ponto mais caro do funil.
  */
-export const HOTMART_URL: string = "https://pay.hotmart.com/Q106913820E";
+export const HOTMART_URL: string = "https://pay.hotmart.com/Q106913820E?off=ukwdm8tu";
 
 /**
  * ID do vídeo da aula gratuita no YouTube.
@@ -64,7 +64,7 @@ export const VENDAS_ABERTAS = CHECKOUT_ATIVO && INSCRICOES_ABERTAS;
 export const MATRICULA_LABEL = !VENDAS_ABERTAS
   ? "Quero ser avisado(a)"
   : PRE_INSCRICAO
-    ? "Garantir minha pré-inscrição"
+    ? "Comprar o curso"
     : "Quero me matricular";
 
 /** Linha de apoio que aparece embaixo dos botões de matrícula. */
